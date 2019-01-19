@@ -1,0 +1,12 @@
+import csv
+
+f1=open('File name', 'r')
+f2=open('new file', 'w')
+t1=csv.reader(f1, delimiter = '|')
+t2=csv.writer(f2, delimiter = ',', lineterminator = '\n')
+
+for i in range(100):
+	t2.writerows([t1.next()])
+
+f1.close()
+f2.close()
