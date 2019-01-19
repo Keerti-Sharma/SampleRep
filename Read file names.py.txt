@@ -1,0 +1,22 @@
+#Make sure to include this python file in the folder that needs to be read #Reads the file name, file type, and file path of all files in a folder
+
+#Reads file name and file path
+import os
+
+for root, dirs, files in os.walk("."):
+    for file in files:
+        p=os.path.join(root,file)
+        print p
+        print os.path.abspath(p)
+        print
+        
+#Reads file name
+for root, dirs, files in os.walk("."):  
+    for filename in files:
+        print(filename)
+
+#Reads the file name, file type, and file path to a csv import subprocess
+
+with open("Directory.csv", "w+") as output:
+    subprocess.call(["python", "./Read file names1.py"], stdout=output);
+    
